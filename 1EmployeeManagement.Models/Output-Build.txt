@@ -1,0 +1,5 @@
+﻿Build started...
+1>------ Build started: Project: EmployeeManagement.Api, Configuration: Debug Any CPU ------
+1>EmployeeManagement.Api -> C:\dev\BlazorApp\1EmployeeManagement.Models\EmployeeManagement.Api\bin\Debug\netcoreapp3.1\EmployeeManagement.Api.dll
+1>EmployeeManagement.Api -> C:\dev\BlazorApp\1EmployeeManagement.Models\EmployeeManagement.Api\bin\Debug\netcoreapp3.1\EmployeeManagement.Api.Views.dll
+========== Build: 1 succeeded, 0 failed, 2 up-to-date, 0 skipped ==========
