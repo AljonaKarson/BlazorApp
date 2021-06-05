@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EmployeeManagement.Web.Pages
 {
-    public class DatabindingDemo : ComponentBase
+    public class DatabindingDemoBase : ComponentBase
     {
         protected string Name { get; set; } = "Tom";
 

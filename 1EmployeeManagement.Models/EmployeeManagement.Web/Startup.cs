@@ -1,4 +1,5 @@
 
+using EmployeeManagement.Web.Pages;
 using EmployeeManagement.Web.Services;
 using EmployeeManagement.Web.Shared;
 using Microsoft.AspNetCore.Builder;
