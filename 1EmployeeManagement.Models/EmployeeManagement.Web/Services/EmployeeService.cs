@@ -1,4 +1,5 @@
 ﻿using _1EmployeeManagement.Models;
+using EmployeeManagement.Web.Pages;
 using EmployeeManagement.Web.Shared;
 using Microsoft.AspNetCore.Components;
 using System;
@@ -25,6 +26,11 @@ namespace EmployeeManagement.Web.Services
         public async Task<IEnumerable<Employee>> GetEmployees()
         {
             return await httpClient.GetJsonAsync<Employee[]>("api/employees");
+        }
+
+        Task IEmployeeService.GetEmployees()
+        {
+            throw new NotImplementedException();
         }
     }
 
