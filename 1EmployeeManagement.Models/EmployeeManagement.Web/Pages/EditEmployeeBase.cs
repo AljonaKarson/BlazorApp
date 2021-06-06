@@ -12,7 +12,8 @@ namespace EmployeeManagement.Web.Pages
     {
         [Inject]
         public IEmployeeService EmployeeService { get; set; }
-
+        public string PageHeader { get; set; }
+        public string PageHeaderText { get; private set; }
         private Employee Employee { get; set; } = new Employee();
         public EditEmployeeModel EditEmployeeModel { get; set; } = new EditEmployeeModel();
         [Inject]
@@ -34,6 +35,7 @@ namespace EmployeeManagement.Web.Pages
             }
             else
             {
+                PageHeaderText = "Create Employee";
                 Employee = new Employee
                 {
                     DepartmentId = 1,
