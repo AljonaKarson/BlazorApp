@@ -1,4 +1,5 @@
 ﻿using _1EmployeeManagement.Models;
+using AutoMapper;
 using Microsoft.AspNetCore.Components;
 using System;
 using System.Collections.Generic;
@@ -21,23 +22,27 @@ namespace EmployeeManagement.Web.Pages
         [Parameter]
         public string Id { get; set; }
         public object EmployeeId { get; private set; }
+        [Inject]
+        public IMapper Mapper { get; set; }
 
-        protected override async Task OninitializedAsync()
+        protected async override Task OnInitializedAsync()
         {
             Employee = await EmployeeService.GetEmployee(int.Parse(Id));
             Departments = (await DepartmentService.GetDepartments()).ToList();
             DepartmentId = Employee.DepartmentId.ToString();
 
-            EditEmployeeModel.EmployeeId = Employee.EmployeeId;
-            EditEmployeeModel.FirstName = Employee.FirstName;
-            EditEmployeeModel.LastName = Employee.LastName;
-            EditEmployeeModel.Email = Employee.Email;
-            EditEmployeeModel.ConfirmEmail = Employee.Eail;
-            EditEmployeeModel.DateOfBrith = Employee.DateOfBrith;
-            EditEmployeeModel.Gender = Employee.Gender;
-            EditEmployeeModel.DepartmentId = Employee.DepartmentId;
-            EditEmployeeModel.PhotoPath = Employee.PhotoPath;
-            EditEmployeeModel.Department = Employee.Department;
+            Mapper.Map(Employee, EditEmployeeModel);
+
+           // EditEmployeeModel.EmployeeId = Employee.EmployeeId;
+            //EditEmployeeModel.FirstName = Employee.FirstName;
+            //EditEmployeeModel.LastName = Employee.LastName;
+            //EditEmployeeModel.Email = Employee.Email;
+            //EditEmployeeModel.ConfirmEmail = Employee.Eail;
+            //EditEmployeeModel.DateOfBrith = Employee.DateOfBrith;
+            //EditEmployeeModel.Gender = Employee.Gender;
+            //EditEmployeeModel.DepartmentId = Employee.DepartmentId;
+            //EditEmployeeModel.PhotoPath = Employee.PhotoPath;
+            //EditEmployeeModel.Department = Employee.Department;
         }
         protected void HandleValidSubmit()
         { }

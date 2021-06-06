@@ -31,6 +31,7 @@ namespace EmployeeManagement.Web
         {
             services.AddRazorPages();
             services.AddServerSideBlazor();
+            services.AddAutoMapper(typeof(EmployeeProfile));
             IHttpClientBuilder httpClientBuilder = services.AddHttpClient<IEmployeeService, EmployeeService>(client =>
             {
                 client.BaseAddress = new Uri("https://localhost:44379/");
@@ -62,5 +63,9 @@ namespace EmployeeManagement.Web
                 endpoints.MapFallbackToPage("/_Host");
             });
         }
+    }
+
+    internal class EmployeeProfile
+    {
     }
 }
