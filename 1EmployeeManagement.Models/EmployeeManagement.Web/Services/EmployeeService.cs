@@ -17,6 +17,12 @@ namespace EmployeeManagement.Web.Services
         {
             this.httpClient = httpClient;
         }
+
+        public async Task<Employee> CreateEmployee(Employee newEmployee)
+        {
+            return await httpClient.PostJsonAsync<Employee>("api/employees", newEmployee);
+        }
+
         public async Task<Employee> GetEmployee(int id)
         {
             return await httpClient.GetJsonAsync<Employee>($"api/employees/{id}");
@@ -32,7 +38,7 @@ namespace EmployeeManagement.Web.Services
             return await httpClient.PutJsonAsync<Employee>("api/employees", updateEmployee);
         }
 
-        Task IEmployeeService.GetEmployees()
+        Task IEmployeeService.GetEmployee()
         {
             throw new NotImplementedException();
         }
