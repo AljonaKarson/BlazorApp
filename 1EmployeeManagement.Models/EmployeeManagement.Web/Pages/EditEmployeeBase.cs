@@ -39,7 +39,8 @@ namespace EmployeeManagement.Web.Pages
             EditEmployeeModel.PhotoPath = Employee.PhotoPath;
             EditEmployeeModel.Department = Employee.Department;
         }
-
+        protected void HandleValidSubmit()
+        { }
     }
 
 }
