@@ -1,13 +1,15 @@
-﻿using _1EmployeeManagement.Models.CustomValidators;
+﻿using _1EmployeeManagement.Models;
+using _1EmployeeManagement.Models.CustomValidators;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Text;
+using System.Linq;
+using System.Threading.Tasks;
 
-namespace _1EmployeeManagement.Models
+namespace EmployeeManagement.Web.Models
 {
-   public class Employee
-    {
+    public class EmployeeModel
+    { 
         public int EmployeeId { get; set; }
         [Required(ErrorMessage = "FirstName is mandatory")]
         [MinLength(2)]
@@ -15,14 +17,19 @@ namespace _1EmployeeManagement.Models
         [Required]
         public string LastName { get; set; }
         [EmailAddress]
-        public string Email { get; set; }
         [EmailDomainValidator(AllowedDomain = "pragimtech.com",
            ErrorMessage = "Only ProdimTech.com is allower")]
+        public string Email { get; set; }
+        [ConfirmEmail]
+        public string ConfirmEmail { get; set; }
         public DateTime DateOfBrith { get; set; }
         public Gender Gender { get; set; }
         public int DepartmentId { get; set; }
         public string PhotoPath { get; set; }
         public Department Department { get; set; }
-        public object Eail { get; set; }
+    }
+
+    internal class ConfirmEmailAttribute : Attribute
+    {
     }
 }
