@@ -1,11 +1,14 @@
 ﻿using _1EmployeeManagement.Models;
+using System.Collections;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace EmployeeManagement.Web.Pages
 {
     public interface IEmployeeService
     {
-        Task GetEmployees();
-        Task<Employee> GetEmployee(int v);
+        Task<IEnumerable<Employee>> GetEmployees();
+        Task<Employee> GetEmployee(int id);
+        Task<Employee> UpdateEmployee(Employee updateEmployee);
     }
 }
