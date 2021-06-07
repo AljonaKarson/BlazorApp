@@ -128,7 +128,7 @@ using System.Net;
 using System.Threading.Tasks;
 using EmployeeManagement.Web.Pages;
 
-namespace EmployeeManagment.Web.Pages
+namespace EmployeeManagement.Web.Pages
 {
     public class EditEmployeeBase : ComponentBase
     {
