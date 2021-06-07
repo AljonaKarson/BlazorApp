@@ -1,13 +1,11 @@
-﻿<input id="firstName" @attributes="InputAttributes" />
+﻿<h1 style="@ElementStyle;@H1Border">-Child Component Text</h1>
 
-    @code {
-        [Parameter]
-        public Dictionary<string, object> InputAttributes { get; set; } =
-            new Dictionary<string, object>()
-            {
-            { "required", "required" },
-            { "placeholder", "Child Component Placeholder" },
-            { "size", "100" },
-            { "maxlength", "15" }
-            };
-    }
+<GrandChildComponent></GrandChildComponent>
+
+@code {
+    [CascadingParameter(Name = "ColorStyle")]
+    public string ElementStyle { get; set; }
+
+    [CascadingParameter(Name = "BorderStyle")]
+    public string H1Border { get; set; }
+}
