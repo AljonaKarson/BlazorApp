@@ -1,10 +1,8 @@
 ﻿using _1EmployeeManagement.Models;
 using EmployeeManagement.Web.Pages;
-using EmployeeManagement.Web.Shared;
 using Microsoft.AspNetCore.Components;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 

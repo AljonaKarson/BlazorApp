@@ -1,5 +1,5 @@
 ﻿using _1EmployeeManagement.Models;
-using EmployeeManagement.Web.Shared;
+using EmployeeManagement.Web.Services;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using System;

@@ -10,5 +10,6 @@ namespace EmployeeManagement.Api.Models
     {
         IEnumerable<Department> GetDepartments();
         Department GetDepartment(int departmentId);
+        Task<object> GetDepartment();
     }
 }

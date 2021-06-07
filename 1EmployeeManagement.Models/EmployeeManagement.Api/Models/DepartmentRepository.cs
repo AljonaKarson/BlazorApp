@@ -21,6 +21,11 @@ namespace EmployeeManagement.Api.Models
                 .FirstOrDefault(d => d.DepartmentId == departmentId);
         }
 
+        public Task<object> GetDepartment()
+        {
+            throw new NotImplementedException();
+        }
+
         public IEnumerable<Department> GetDepartments()
         {
             return appDbContext.Departments;
