@@ -9,7 +9,7 @@ namespace EmployeeManagement.Web.Pages
 {
     public class EmployeeListBase : ComponentBase
     {
-[Inject]
+        [Inject]
         public IEmployeeService EmployeeService { get; set; }
         public bool ShowFooter { get; set; } = true;
         public IEnumerable<Employee> Employees { get; set; }
@@ -18,7 +18,10 @@ namespace EmployeeManagement.Web.Pages
         {
             Employees = (await EmployeeService.GetEmployees()).ToList();
         }
-
+        protected async Task EmployeeDeleted()
+        {
+            Employees = (await EmployeeService.GetEmployees()).ToList();
+        }
         protected int SelectedEmployeesCount { get; set; } = 0;
 
         protected void EmployeeSelectionChanged(bool isSelected)

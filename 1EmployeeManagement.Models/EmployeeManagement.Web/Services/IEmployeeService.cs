@@ -11,5 +11,7 @@ namespace EmployeeManagement.Web.Pages
         Task<Employee> GetEmployee(int id);
         Task<Employee> UpdateEmployee(Employee updateEmployee);
         Task<Employee> CreateEmployee(Employee newEmployee);
+        Task DeleteEmployee(int id);
+        Task GetEmployee();
     }
 }
