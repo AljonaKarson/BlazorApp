@@ -1,7 +1,7 @@
 ﻿@page "/"
 @inherits EmployeeListBase
 
-
+@attribute [Authorize(Roles = "administrator, manager")]
 <h3>Selected Employee Count - @SelectedEmployeesCount</h3>
 <input type="checkbox" id="showFooter" @bind="ShowFooter" />
 <label for="showFooter">Show Footer</label>
@@ -16,7 +16,7 @@
     {
         <DisplayEmployee Employee="employee" ShowFooter="ShowFooter"
                          OnEmployeeSelection="EmployeeSelectionChanged"
-                        OnEmployeeDeleted="EmployeeDeleted"></DisplayEmployee>
+                         OnEmployeeDeleted="EmployeeDeleted"></DisplayEmployee>
     }
 </div>
 }

@@ -14,6 +14,7 @@ using EmployeeManagement.Web.Pages;
 namespace EmployeeManagement.Web.Pages
 {
     public class EditEmployeeBase : ComponentBase
+
     {
         [CascadingParameter]
         private Task<AuthenticationState> authenticationStateTask { get; set; }
